@@ -4,12 +4,17 @@ using UnityEngine.InputSystem;
 public class ClickMove : MonoBehaviour
 {
     public float moveSpeed = 3f;
+    private float currentSpeed;
     private Vector2 mouseScreenPosition;
     
     private Vector3 targetPosition;
     private bool isMoving = false;
     private bool isSprinting = false;
 
+    private void Awake()
+    {
+        currentSpeed = moveSpeed;
+    }
 
     public void OnPoint(InputValue value)
     {
@@ -55,16 +60,16 @@ public class ClickMove : MonoBehaviour
             {
                 normalizedVector = direction / magnitude;
             }
-            transform.position += normalizedVector * moveSpeed * Time.deltaTime;
+            transform.position += normalizedVector * currentSpeed * Time.deltaTime;
         }
 
         if (isSprinting)
         {
-            moveSpeed = 6f;
+            currentSpeed = moveSpeed * 2.0f;
         }
-        if (!isSprinting)
+        else
         {
-            moveSpeed = 3f;
+            currentSpeed = moveSpeed;
         }
     }
 
