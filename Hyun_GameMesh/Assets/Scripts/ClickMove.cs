@@ -72,5 +72,5 @@ public class ClickMove : MonoBehaviour
             currentSpeed = moveSpeed;
         }
     }
-
+    
 }
