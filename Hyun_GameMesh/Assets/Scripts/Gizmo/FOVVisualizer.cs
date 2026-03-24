@@ -1,12 +1,15 @@
 using UnityEngine;
+// 내적 범위를 씬 뷰에서 기즈모로 보이게 하는 스크립트
 
 public class FOVVisualizer : MonoBehaviour
 {
+    
     public float viewAngle = 60f;
 
     public float viewDistance = 5f;
 
-    private void OnDrawGizmos()
+
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
 
@@ -21,7 +24,5 @@ public class FOVVisualizer : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, forward);
-
-
     }
 }
