@@ -89,7 +89,7 @@
                 },
                 {
                     "name": "LeftParry",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "45f89c93-3483-4441-9210-15fffeb15d78",
                     "expectedControlType": "",
                     "processors": "",
@@ -98,7 +98,7 @@
                 },
                 {
                     "name": "RightParry",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "c570f808-464b-403e-8547-41b720390e6c",
                     "expectedControlType": "",
                     "processors": "",
