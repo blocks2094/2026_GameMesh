@@ -15,6 +15,7 @@ public class ZiggsWBomb : MonoBehaviour
     [Header("피격 대상")]
     [SerializeField] private LayerMask playerLayer;
 
+    public GameObject explosionFx;
     private bool exploded;
 
     private void Start()
@@ -32,7 +33,7 @@ public class ZiggsWBomb : MonoBehaviour
         KnockUpPlayer();
 
         // 여기에 폭발 이펙트 생성 가능
-        // Instantiate(explosionFx, transform.position, Quaternion.identity);
+        Instantiate(explosionFx, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
     }

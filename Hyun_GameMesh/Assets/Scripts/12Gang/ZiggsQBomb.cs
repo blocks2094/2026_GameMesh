@@ -19,6 +19,8 @@ public class ZiggsQBomb : MonoBehaviour
     [SerializeField] private float maxUpForce = 10f;   // 중심에 가까울 때 위로 띄우는 최대 힘
     [SerializeField] private float sideForce = 4f;     // 바깥쪽으로 밀어내는 힘
 
+    public GameObject explosionFx;
+
     private int bounceCount;
     private bool exploded;
 
@@ -102,7 +104,7 @@ public class ZiggsQBomb : MonoBehaviour
         }
 
         // 폭발 이펙트가 있다면 여기에서 생성
-        // Instantiate(explosionFx, transform.position, Quaternion.identity);
+        Instantiate(explosionFx, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
     }
